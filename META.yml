@@ -1,5 +1,5 @@
 ---
-abstract: 'Adaptor for Redis PubSub'
+abstract: 'Produce or consume messages by Redis PubSub'
 author:
   - 'Tomas (t0m) Doran <bobtfish@bobtfish.net>'
 build_requires:
@@ -26,5 +26,5 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/suretec/Message-Passing-Redis.git
-version: 0.002
+version: 0.003
 x_authority: GHENRY
