@@ -4,20 +4,19 @@ use Scalar::Util qw/ weaken /;
 use Redis;
 use namespace::autoclean;
 
-with 'Message::Passing::Role::ConnectionManager';
+with qw/
+    Message::Passing::Role::ConnectionManager
+    Message::Passing::Role::HasHostnameAndPort
+/;
 
-has server => (
-    is => 'ro',
-    isa => 'Str',
-    required => 1,
-);
+sub _default_port { 6379 }
 
 sub _build_connection {
     my $self = shift;
     weaken($self);
     my $client = Redis->new(
         encoding => undef,
-        server => $self->server,
+        server => sprintf("%s:%s", $self->hostname, $self->port),
     );
     # Delay calling set_connected till we've finished building the client
     my $i; $i = AnyEvent->idle(cb => sub {

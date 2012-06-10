@@ -16,7 +16,6 @@ lib/Message/Passing/Output/Redis.pm
 lib/Message/Passing/Redis.pm
 lib/Message/Passing/Redis/ConnectionManager.pm
 lib/Message/Passing/Redis/Role/HasAConnection.pm
-lib/Message/Passing/Redis/Types.pm
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
