@@ -2,8 +2,9 @@ package Message::Passing::Redis;
 use strict;
 use warnings;
 use Redis;
+use namespace::clean -except => 'meta';
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 $VERSION = eval $VERSION;
 
 1;
@@ -15,11 +16,11 @@ Message::Passing::Redis - Produce or consume messages by Redis PubSub
 =head1 SYNOPSIS
 
     # Terminal 1:
-    $ message-passing --input STDIN --output Redis --output_options '{"topic":"foo","hostname":"127.0.0.1","port":"6379"}'
+    $ message-pass --input STDIN --output Redis --output_options '{"topic":"foo","hostname":"127.0.0.1","port":"6379"}'
     {"data":{"some":"data"},"@metadata":"value"}
 
     # Terminal 2:
-    $ message-passing --output STDOUT --input Redis --input_options '{"topics":["foo"],"hostname":"127.0.0.1","port":"6379"}'
+    $ message-pass --output STDOUT --input Redis --input_options '{"topics":["foo"],"hostname":"127.0.0.1","port":"6379"}'
     {"data":{"some":"data"},"@metadata":"value"}
 
 =head1 DESCRIPTION

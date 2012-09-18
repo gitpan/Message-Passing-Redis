@@ -21,10 +21,14 @@ no_index:
     - inc
     - t
 requires:
-  Message::Passing: 0.008
+  AnyEvent: 0
+  Message::Passing: 0.106
+  Moo: 1.000003
+  MooX::Types::MooseLike: 0.12
   Redis: 0
+  namespace::clean: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/suretec/Message-Passing-Redis.git
-version: 0.005
+version: 0.006
 x_authority: GHENRY
